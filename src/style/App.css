@@ -1,0 +1,288 @@
+*{
+    box-sizing: border-box;
+}
+
+@font-face{
+    font-family: poorrich;
+    src: url("./font/prr.ttf"); /*poor richard font */
+}
+
+html, body{
+    height: 100%;
+}
+
+body{
+    
+    font-family: poorrich;
+    margin: 0;
+}
+
+
+#root{ height: 100%; }
+
+.flex-row-center{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    outline: none;
+    border: none;
+    cursor: pointer;
+
+    font-family: poorich;
+}
+
+.my-button{
+    background-color: var(--button-background-color);
+    font-size: 20px;
+
+    padding: 10px;
+    border-radius: 24px;
+    -webkit-box-shadow: 0px 2px 2px 0px var(--button-shadow-color); 
+    box-shadow: 0px 2px 2px 0px var(--button-shadow-color);
+
+    transition: scale .15s;
+}
+
+button:active{
+    scale: .95;
+    transition: scale .15s;
+}
+
+.App--component{
+    display: grid;
+    gap: 0;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    height: 100%;
+    color: var(--text-color);
+    background: var(--body-background-color);
+}
+
+
+
+
+
+.Toppanel--component{
+    background-color: var(--menu-panel-background);
+
+    grid-column: 2 / 5;
+    grid-row: 1 / 1;
+
+    display: flex;
+    flex-direction: row;
+    padding: 24px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#Toppanel-buttons{
+    gap: 12px;
+}
+
+#Toppanel-theme-switch{
+    gap: 6px;
+}
+
+#Toppanel-theme-switch span{
+    font-size: 24px;
+}
+
+#Toppanel-pagination{
+    gap: 6px;
+}
+
+#Toppanel-pagination button{
+    
+    outline: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+}
+
+#Toppanel-username h2{
+    margin: 0;
+}
+
+.Sidepanel--component{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(12,1fr);
+    background-color: var(--menu-panel-background);
+    grid-row: 1 / -1;
+    overflow-y: scroll;
+}
+
+#Sidepanel-header{
+    font-size: 35px;
+    justify-self: center;
+    align-self: center;
+    grid-column: span 2;
+    grid-row: 1 / 2;
+}
+
+#Sidepanel-input-boxes{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    grid-column: span 2;
+    padding: 12px;
+
+}
+
+.Sidepanel--input-box{
+    background-color: var(--input-box-background-color);
+    padding: 12px;
+    padding-bottom: 24px;
+    border-radius: 18px;
+    box-shadow: 0px 2px 2px 0px var(--input-box-shadow-color);
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.Sidepanel--input-box select{
+   background-color: #fff;
+   border: 1px solid black;
+   outline: none;
+   padding: 6px;
+   border-radius: 12px;
+   cursor: pointer;
+}
+
+
+.Sidepanel--input-box-header{
+    font-size: 30px;       
+    margin-top: 0;
+    align-self: center;
+}
+
+.Sidepanel--input-box label{
+    font-size: 22px;
+}
+
+.Sidepanel--input-box input{
+    display: block;
+}
+
+.Sidepanel--input-box select{
+    display: block;
+}
+
+.importance-radio{
+    display: flex;
+    gap: 6px;
+}
+
+#Sidepanel-footer{
+    background-color: var(--sidepanel-footer-background-color);
+    grid-column: span 2;
+    grid-row: 12 / -1;
+    position: sticky;
+    bottom :0;
+}
+
+#Sidepanel-footer span{
+    font-size: 20px;
+}
+
+.all-day-enabled{
+    display: none;
+}
+
+.modal{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #F8F8F8;
+    padding: 24px;
+    box-shadow: 0 3px 3px #000000;
+    font-family: poorrich;
+    overflow: auto;
+    max-height: 90%;
+    
+}
+
+.modal ul{
+    font-size: 20px;
+}
+
+.modal ul li{
+    margin: 12px 0;
+}
+
+.modal ul button{
+    font-size: 18px;
+}
+
+.modal-visible{
+    display: block;
+}
+
+.modal form{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.Todospanel--component{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 24px;
+    
+    grid-column: 2 / -1;
+    grid-row: 2 / -1;
+
+    padding: 12px;
+    
+    overflow-y: scroll;
+}
+ 
+.Todo--box{
+    background-color: var(--todo-box-background-color);
+    padding: 48px;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+.Todo--box h2{
+    margin: 0;
+}
+
+.Todo--box-header{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.Todo--box-buttons{
+    display: flex;
+    gap: 12px;
+}
+
+.Todo-delete{
+    transform: scale(0);
+}
+
+#Summary-box-categories{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+#Summary-box-categories label span{
+    margin-left: 16px;
+}
